@@ -4,9 +4,10 @@ services:
     build: .
     image: kamon/grafana_graphite
     container_name: kamon-grafana-dashboard
+    restart: on-failure
     ports:
-      - '80:80'
-      - '81:81'
+      - '8000:80'
+      - '8001:81'
       - '8125:8125/udp'
       - '8126:8126'
     volumes:
